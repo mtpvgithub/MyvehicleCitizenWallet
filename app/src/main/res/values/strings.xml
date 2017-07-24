@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">MyVehicle_MyWallet</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="nav_item_home">MY VEHICLE WALLET</string>
+    <string name="nav_item_rc">RC INFO</string>
+    <string name="nav_item_dl">DL INFO</string>
+
+    <!-- navigation drawer item labels  -->
+    <string-array name="nav_drawer_labels">
+        <item>@string/nav_item_home</item>
+        <item>@string/nav_item_rc</item>
+        <item>@string/nav_item_dl</item>
+    </string-array>
+
+    <string name="title_dl">DL INFO</string>
+    <string name="title_rc">RC INFO</string>
+    <string name="title_home">MY VEHICLE WALLET</string>
+
+
+    <string name="runtime_permissions_txt">Please enable ALL permissions from app settings.</string>
+    <string name="captcha_note">Note : Please Click on Resend Button, if Captcha not Displayed.</string>
+    <string name="vehicle_heading_txt">Vehicle Details </string>
+    <string name="owner_txt">Owner Name	</string>
+    <string name="vehicleNo_txt">Vehicle No </string>
+    <string name="Totalamount_txt">Pending Amount </string><!-- \u20B9 -->
+    <string name="note_txt">* Note : Click On Particular Challan for more Details.</string>
+    <string name="mobile">Mobile :</string>
+    <string name="vehicle_detail_txt">Vehicle Details</string>
+    <string name="dl_txt">Driving Licence No </string>
+    <string name="challan_detail">Challan Details</string>
+    <string name="echallan_no_txt">E Challan No</string>
+    <string name="UNIT_CODE">Unit Code</string>
+    <string name="unit_name">Unit Name</string>
+
+    <string name="date">Date</string>
+    <string name="Time">Time</string>
+    <string name="violation_place">Place Of Violation</string>
+    <string name="ps_limits">Traffic PS Limits</string>
+    <string name="violation_name">Violation</string>
+    <string name="fine">Fine Amount</string>
+    <string name="charges">Charges</string>
+    <string name="total_fine">Total Fine Amount</string>
+    <string name="title_activity_complaints_menu">ComplaintsMenu</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_complaints_system_menu">ComplaintsSystemMenu</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="categories">Select Category</string>
+    <string name="city">Select City</string>
+    <string name="area">Select Area</string>
+    <string name="title_activity_pendindchallans_with_tab">Pendindchallans_withTab</string>
+    <string name="title_activity_e__vehicle_track__tab">E_Vehicle_track_Tab</string>
+    <string name="title_activity_e__driving__track">E_Driving_Track</string>
+    <string name="title_activity_aadhar__track">Aadhar_Track</string>
+    <string name="title_activity_e__contact__track">E_Contact_Track</string>
+
+    <string name="google_maps_key"></string>
+
+
+</resources>

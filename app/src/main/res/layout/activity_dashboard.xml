@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linearlayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp">
+
+        <ImageView
+            android:id="@+id/ImageView3_Left"
+            android:layout_width="fill_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/imageView1"
+            android:background="@drawable/imageviewborder"
+            android:padding="2dp"
+            android:scaleType="fitXY" />
+    </LinearLayout>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linearlayout2">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
+
+
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/buttonback"
+                android:text="My Vehicle's Information"
+                android:textColor="#ffff"
+                android:textSize="12sp"
+                android:id="@+id/Btn_myvehicle_info"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="10dp"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="My Driver's Information"
+                android:textColor="#ffff"
+                android:background="@drawable/buttonback"
+                android:textSize="12sp"
+                android:id="@+id/Btn_mydrivers_info"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="Vehicle Wallet"
+                android:textColor="#ffff"
+                android:background="@drawable/buttonback"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:id="@+id/Btn_vehicle_wallet"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="My Traffic Violations And Payments"
+                android:textColor="#ffff"
+                android:gravity="center"
+                android:id="@+id/Btn_violations_payments"
+                android:background="@drawable/buttonback"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="My Transport Firm/Company Information"
+                android:textColor="#ffff"
+                android:background="@drawable/buttonback"
+                android:textSize="12sp"
+                android:id="@+id/Btn_firm_info"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="Report On Fake Registration Numbers/Addressed Vehicles"
+                android:textColor="#ffff"
+                android:background="@drawable/buttonback"
+                android:textSize="12sp"
+                android:id="@+id/Btn_fake_numbers"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="Registration Of Cabs/Autos/Schoolbuses"
+                android:textColor="#ffff"
+                android:background="@drawable/buttonback"
+                android:id="@+id/Btn_reg_vehicles"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="Report/Complaint/Status Of My Driver"
+                android:textColor="#ffff"
+                android:background="@drawable/buttonback"
+                android:id="@+id/Btn_reports_complaints"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="Feedback/Complaints on Echallans"
+                android:textColor="#ffff"
+                android:id="@+id/Btn_feedback_componechallan"
+                android:background="@drawable/buttonback"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="Feedback/Compliant On Police/PS"
+                android:textColor="#ffff"
+                android:gravity="center"
+                android:id="@+id/Btn_componpoliceorps"
+                android:background="@drawable/buttonback"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="Report Any Traffic Violation/Enroachment/Obstruction"
+                android:textColor="#ffff"
+                android:background="@drawable/buttonback"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:id="@+id/Btn_complaints_service"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:textStyle="bold"/>
+
+          
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/Tv_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearlayout2"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Welcome Mr.M.Manohar"
+        android:textColor="@color/colorPrimary"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/footer"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:layout_alignParentBottom="true"
+        android:text="Powered By : MOTHER TECHNOLOGIES PROJECT VENTURES"
+        android:textColor="#ffffff"
+        android:background="@color/navigationBarColor"
+        android:textStyle="bold|italic"
+        android:gravity="center" />
+
+</RelativeLayout>

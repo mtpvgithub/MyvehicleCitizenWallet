@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:visibility="visible"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="THANKS FOR USING MY VEHIVLE WALLET"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:id="@+id/ratinglayout"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        >
+        <android.support.v7.widget.AppCompatRatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:id="@+id/ratingbar"
+            android:numStars="5"
+            android:layout_marginLeft="80dp"
+
+            />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:gravity="bottom"
+        android:layout_below="@+id/linearLayout3"
+     >
+
+        <TextView
+            android:id="@+id/Tv_footer"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:layout_alignParentBottom="true"
+            android:text="Powered By : MOTHER TECHNOLOGIES PROJECT VENTURES"
+            android:textColor="#ffffff"
+            android:background="@color/navigationBarColor"
+            android:textStyle="bold|italic"
+            android:gravity="center" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:id="@+id/Btn_Dldetails"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/buttonback"
+            android:gravity="center"
+            android:text="DL DETAILS"
+            android:textColor="#ffffff"
+            android:padding="5dp"
+            android:textSize="10sp"
+            android:textStyle="bold|italic" />
+
+        <Button
+            android:id="@+id/Btn_Rcdetails"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/buttonback"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="RC DETAILS"
+            android:padding="5dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#ffffff"
+            android:textSize="10sp"
+            android:textStyle="bold|italic" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_below="@+id/textInputLayout4">
+
+        <Button
+            android:id="@+id/Btn_Complaints"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/buttonback"
+            android:gravity="center"
+            android:text="COMPLAINTS MENU"
+            android:textColor="#ffffff"
+            android:textSize="10sp"
+            android:padding="5dp"
+            android:textStyle="bold|italic" />
+
+        <Button
+            android:id="@+id/Btn_Pendingchallans"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/buttonback"
+            android:focusable="true"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp"
+            android:text="PENDING CHALLANS"
+            android:textColor="#ffffff"
+            android:textSize="10sp"
+            android:textStyle="bold|italic" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/linearLayout2">
+
+        <Button
+            android:id="@+id/Btn_Aadhardetails"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/buttonback"
+            android:gravity="center"
+            android:text="AADHAR DETAILS"
+            android:textColor="#ffffff"
+            android:padding="5dp"
+            android:textSize="10sp"
+            android:textStyle="bold|italic" />
+
+        <Button
+            android:id="@+id/Btn_overall"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/buttonback"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="OVER ALL APPLICATION"
+            android:padding="5dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#ffffff"
+            android:textSize="10sp"
+            android:textStyle="bold|italic" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Remarks:"
+        android:id="@+id/Tv_remarks"
+        android:textColor="@color/navigationBarColor"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/ratinglayout"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayout4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLabel"
+        android:layout_below="@+id/Tv_remarks">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/et_remarks"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/edittextshape"
+            android:gravity="start"
+            />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+</RelativeLayout>

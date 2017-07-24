@@ -1,0 +1,235 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/reg_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:layout_below="@+id/Tv_user"
+        >
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/TextLabel"
+            android:id="@+id/regno"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            >
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/Ed_regno"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="REGISTRATION NO"
+                android:textSize="12sp"
+                android:textColor="@color/secondary_text"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:inputType="textCapCharacters"
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <requestFocus />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/spinner_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_below="@+id/reg_layout">
+
+
+        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+            android:id="@+id/android_material_design_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="SELECT WHEELER"
+            android:theme="@style/TextLabel"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
+            android:textColorHint="@color/textColorPrimary"
+            app:met_floatingLabel="none"
+            app:theme="@style/TextLabel"
+            android:textSize="12sp"
+            app:met_floatingLabelText="SELECT WHEELER"
+            app:met_floatingLabelTextColor="@color/navigationBarColor"
+            app:met_floatingLabelTextSize="12sp"
+            android:textAppearance="@color/navigationBarColor"
+            app:paddingStart="5dp"
+            android:textStyle="bold"
+            app:paddingEnd="5dp"
+
+            app:met_textColor="@color/secondary_text"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/Chasis_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/spinner_layout">
+
+
+        <!--  Password Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:theme="@style/TextLabel">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/Ed_chasis"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/secondary_text"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:inputType="textCapCharacters"
+                android:hint="LAST 4 Digits OF CHASIS NO."
+                android:maxLength="4"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/engine_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/Chasis_layout">
+
+
+        <!--  Password Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
+            android:theme="@style/TextLabel">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/Ed_engineno"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/secondary_text"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:inputType="textCapCharacters"
+                android:hint="LAST 4 Digits OF ENGINE NO."
+                android:maxLength="4"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/date_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/engine_layout">
+        <Button
+            android:id="@+id/btn_DatePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:padding="5dp"
+            android:gravity="left|center"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:textColor="@color/secondary_text"
+            android:text="--DATE OF PURCHASE--"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:background="@drawable/edittextstyle"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/button_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/date_layout"
+        android:gravity="center"
+
+
+        >
+
+
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Btn_rcdetails"
+            android:text="GET DETAILS"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/textColorPrimary"
+            android:background="@drawable/buttonbackground"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+
+            />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/Tv_user"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearlayout2"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="List Of Vehicles"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:paddingLeft="10dp"
+        android:background="@color/primary"
+        android:gravity="left|center"
+        />
+
+    <TextView
+        android:id="@+id/footer"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:layout_alignParentBottom="true"
+        android:text="Powered By : MOTHER TECHNOLOGIES PROJECT VENTURES"
+        android:textColor="#ffffff"
+        android:background="@color/navigationBarColor"
+        android:textStyle="bold|italic"
+        android:gravity="center" />
+
+</RelativeLayout>

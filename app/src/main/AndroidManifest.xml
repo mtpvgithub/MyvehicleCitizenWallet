@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mtpv.manohar.myvehicle_mywallet">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Vehicle_Wallet_Login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".OTP"></activity>
+        <activity android:name=".DashboardActivity"></activity>
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".VehicleDashboard"></activity>
+        <activity android:name=".ListofVehicles_Activity"></activity>
+        <activity android:name=".MyVehicle_Purchases"></activity>
+        <activity android:name=".NoVehicle_Activity"></activity>
+        <activity android:name=".SoldOut_Activity"></activity>
+        <activity android:name=".ChangeofAddress_Activity"></activity>
+        <activity android:name=".NetBanking"></activity>
+        <activity android:name=".Logout"></activity>
+        <activity android:name=".Challan_Detail"></activity>
+        <activity android:name=".Pendindchallans_withTab"></activity>
+        <activity android:name=".ImageViewActivity"></activity>
+        <activity android:name=".PopupDetails"></activity>
+        <activity android:name=".ComplaintsSystemMenu"></activity>
+        <activity android:name=".Feedback"></activity>
+        <activity android:name=".ComplaintOnPolice_PS"></activity>
+        <activity android:name=".Complaintsinechallans"></activity>
+        <activity android:name=".ReportComplaint"></activity>
+
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="6a2e6247d1a27e2758ff99cd4d594d91d1b49b3f" />
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="com.javapapers.currentlocationinmap.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="21" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+</manifest>

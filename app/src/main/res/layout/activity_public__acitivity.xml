@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:background="#ffff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+
+  <!-- Footer aligned to bottom -->
+
+  <RelativeLayout
+      android:id="@+id/footer"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:gravity="bottom" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="34dp"
+        android:contentDescription="@null"
+        android:gravity="bottom"
+        android:scaleType="fitXY"
+        android:background="#3F424B"
+        android:text="Powered By : MOTHER TECHNOLOGIES PROJECT VENTURES"
+        android:textColor="#ffff"
+        android:textStyle="bold|italic"
+        android:textSize="14dp"
+      />
+
+  </RelativeLayout>
+
+  <LinearLayout
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:layout_above="@+id/footer"
+      android:layout_alignParentTop="true"
+      android:layout_marginTop="20dp">
+
+    <!-- Content below header and above footer -->
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="0dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+    </RadioGroup>
+
+
+    <RelativeLayout
+        android:id="@+id/vehicle_details_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:visibility="visible">
+
+      <TextView
+          android:id="@+id/text"
+          style="@style/TextColor"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="10dp"
+          android:text="Enter Vehicle Number"
+          android:textSize="22sp"
+          android:visibility="gone"
+          android:textStyle="bold" />
+
+      <RelativeLayout
+          android:id="@+id/captch_layout1"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/text"
+          android:layout_marginTop="10dp" >
+
+        <RelativeLayout
+            android:id="@+id/captcha_layout"
+            android:layout_width="120dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="0dp"
+            android:background="@drawable/captcha"
+            android:orientation="horizontal" >
+
+          <TextView
+              android:id="@+id/captcha_image"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerInParent="true"
+              android:inputType="textCapCharacters"
+              android:maxLength="5"
+              android:text="4567"
+              android:textColor="#000000"
+              android:textSize="32sp"
+              android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/captcha_text"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/captcha_layout"
+            android:digits="0123456789"
+            android:gravity="center"
+            android:hint="Enter Captcha"
+            android:inputType="number"
+            android:maxLength="5"
+            android:background="@drawable/edittextshape"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/resend_captcha"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/captcha_text"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:src="@drawable/captcha_resend" />
+
+        <TextView
+            android:id="@+id/captcha_note"
+            style="@style/TextColor"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/resend_captcha"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/captcha_note"
+            android:textSize="12sp"
+            android:visibility="gone"
+            android:textStyle="bold" />
+
+      </RelativeLayout>
+
+      <LinearLayout
+          android:id="@+id/vehicleno_layout"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="15dp"
+          android:gravity="center"
+          android:orientation="horizontal"
+          android:layout_below="@+id/captch_layout1"
+          android:weightSum="1" >
+
+        <EditText
+            android:id="@+id/vehicle_no_text"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_weight="0.25"
+            android:background="@drawable/edittextstyle"
+            android:gravity="center"
+            android:maxLength="20"
+            android:hint="Enter Vehicle Number"
+            android:inputType="textCapCharacters"
+            android:textColor="#000000"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/go_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.75"
+            android:background="@drawable/buttonback"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:text="GO"
+            android:textColor="#ffff"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+      </LinearLayout>
+
+
+      <ScrollView
+          android:id="@+id/scroll"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/vehicleno_layout"
+          android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+          <TextView
+              style="@style/TextColor"
+              android:id="@+id/vehicle_heading"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:text="@string/vehicle_heading_txt"
+              android:textSize="25sp"
+              android:textStyle="bold" />
+
+          <LinearLayout
+              android:id="@+id/owner_layout"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="15dp"
+              android:gravity="center"
+              android:orientation="horizontal"
+              android:layout_marginLeft="5dp"
+              android:weightSum="1" >
+
+            <TextView
+                style="@style/TextColor"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="@string/owner_txt"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                style="@style/TextColor"
+                android:textSize="22sp"/>
+
+            <TextView
+                android:id="@+id/owner_name"
+                style="@style/TextColor"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.4"
+                android:paddingLeft="10dp"
+                android:text=""
+                android:textSize="16sp" />
+
+          </LinearLayout>
+
+          <LinearLayout
+              android:id="@+id/vehicle_layout"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="10dp"
+              android:gravity="center"
+              android:orientation="horizontal"
+              android:layout_marginLeft="5dp"
+              android:layout_below="@+id/owner_layout"
+              android:weightSum="1" >
+
+            <TextView
+                android:id="@+id/vehicleNo_text"
+                style="@style/TextColor"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="@string/vehicleNo_txt"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                style="@style/TextColor"
+                android:textSize="22sp"/>
+
+            <TextView
+                android:id="@+id/vehicle_no_details"
+                style="@style/TextColor"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.4"
+                android:paddingLeft="10dp"
+                android:text=""
+                android:textSize="16sp" />
+
+          </LinearLayout>
+
+          <LinearLayout
+              android:id="@+id/amount_layout"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="10dp"
+              android:gravity="center"
+              android:orientation="horizontal"
+              android:layout_below="@+id/vehicle_layout"
+              android:weightSum="1"
+              android:layout_marginLeft="5dp">
+
+            <TextView
+                style="@style/TextColor"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="@string/Totalamount_txt"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                style="@style/TextColor"
+                android:textSize="22sp"/>
+
+            <TextView
+                android:id="@+id/total_amount"
+                style="@style/TextColor"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.4"
+                android:paddingLeft="10dp"
+                android:text=""
+                android:textSize="16sp" />
+
+          </LinearLayout>
+
+          <TextView
+              android:id="@+id/note"
+              style="@style/TextColor"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/note_txt"
+              android:layout_marginLeft="10dp"
+              android:layout_marginTop="25dp"
+              android:layout_below="@+id/amount_layout"
+              android:textStyle="bold"
+              android:textSize="16sp" />
+
+          <TableLayout
+              android:id="@+id/tableLayout"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/note"
+              android:layout_marginTop="5dp"
+              android:shrinkColumns="*"
+              android:stretchColumns="*" >
+          </TableLayout>
+          <ZoomControls
+              android:id="@+id/zoomControls1"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:layout_marginTop="15dp"/>
+
+          <LinearLayout
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/tableLayout"
+              android:layout_marginTop="10dp"
+              android:gravity="center"
+              android:orientation="horizontal"
+              android:weightSum="1" >
+
+            <Button
+                android:id="@+id/netbanking_btn"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:contentDescription="@null"
+                android:background="@drawable/buttonback"
+                android:text="NET BANKING"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="#ffff"
+                android:textSize="16sp" />
+
+
+          </LinearLayout>
+          <TextView
+              android:id="@+id/server_data"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text=""
+              android:textColor="#000000"
+              android:layout_marginTop="10sp"
+              android:textSize="16sp"/>
+          <TableLayout
+              android:id="@+id/tableLayout1"
+              android:layout_width="fill_parent"
+              android:layout_height="match_parent"
+              android:paddingTop="10dp"
+              android:paddingLeft="0dp"
+              android:paddingRight="0dp"
+              android:shrinkColumns="*"
+              android:stretchColumns="*" >
+          </TableLayout>
+        </LinearLayout>
+      </ScrollView>
+    </RelativeLayout>
+
+  </LinearLayout>
+
+</RelativeLayout>

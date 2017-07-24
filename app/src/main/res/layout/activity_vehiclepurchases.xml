@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Tv_user"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            >
+
+            <RelativeLayout
+                android:id="@+id/reg_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/TextLabel"
+                    android:id="@+id/regno"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    >
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/Ed_regno"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="REGISTRATION NO"
+                        android:textSize="12sp"
+                        android:textColor="@color/secondary_text"
+                        android:textStyle="bold"
+                        android:padding="5dp"
+                        android:inputType="textCapCharacters"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <requestFocus />
+
+
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:id="@+id/Newvehicle_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/reg_layout">
+
+
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+
+                    <RadioButton
+                        android:id="@+id/Rd_temp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="radioButtonClicked"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="Temporary"
+                        android:padding="5dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/navigationBarColor"
+                        android:textSize="12sp"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/Rd_perm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="radioButtonClicked"
+                        android:text="Permanent"
+                        android:padding="5dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/navigationBarColor"
+                        android:textSize="12sp"/>
+                </RadioGroup>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/spinner_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/Newvehicle_layout">
+
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/android_material_design_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:hint="SELECT WHEELER"
+                    android:theme="@style/TextLabel"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="5dp"
+                    android:padding="5dp"
+                    android:gravity="top"
+                    android:textColorHint="@color/textColorPrimary"
+                    app:met_floatingLabel="none"
+                    android:textSize="12sp"
+                    app:met_floatingLabelText="SELECT WHEELER"
+                    app:met_floatingLabelTextColor="@color/navigationBarColor"
+                    app:met_floatingLabelTextSize="12sp"
+                    app:paddingStart="5dp"
+                    app:paddingEnd="5dp"
+                    app:met_textColor="@color/secondary_text"
+                    />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/tempregn_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/spinner_layout">
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Is It New Vehicle ?"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/navigationBarColor"
+                    android:textSize="12sp"
+                    />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView1"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+
+                    <RadioButton
+                        android:id="@+id/Rd_newvehicle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="radioButtonClicked"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="YES"
+                        android:padding="5dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/navigationBarColor"
+                        android:textSize="12sp"/>
+
+                    <RadioButton
+                        android:id="@+id/Rd_oldvehilce"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="radioButtonClicked"
+                        android:text="NO"
+                        android:padding="5dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/navigationBarColor"
+                        android:textSize="12sp"/>
+                </RadioGroup>
+            </RelativeLayout>
+
+
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/Chasis_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/tempregn_layout">
+
+
+                <!--  Password Label -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:theme="@style/TextLabel">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/Ed_chasis"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="@color/secondary_text"
+                        android:textStyle="bold"
+                        android:padding="5dp"
+                        android:inputType="textCapCharacters"
+                        android:hint="LAST 4 Digits OF CHASIS NO."
+                        android:maxLength="4"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/engine_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/Chasis_layout">
+
+
+                <!--  Password Label -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="5dp"
+                    android:theme="@style/TextLabel">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/Ed_engineno"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="@color/secondary_text"
+                        android:textStyle="bold"
+                        android:padding="5dp"
+                        android:inputType="textCapCharacters"
+                        android:hint="LAST 4 Digits OF ENGINE NO."
+                        android:maxLength="4"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/engine_layout"
+                android:id="@+id/secondhalf"
+                android:visibility="gone">
+
+
+            <RelativeLayout
+                android:id="@+id/date_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+               >
+                <Button
+                    android:id="@+id/btn_DatePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+
+                    android:padding="5dp"
+                    android:gravity="left|center"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:textColor="@color/secondary_text"
+                    android:text="--DATE OF PURCHASE--"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/edittextstyle"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/sellername_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/date_layout">
+
+
+                <!--  Password Label -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="5dp"
+                    android:theme="@style/TextLabel">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/Ed_sellername"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="@color/secondary_text"
+                        android:textStyle="bold"
+                        android:padding="5dp"
+                        android:inputType="textCapCharacters"
+                        android:hint="SELLER NAME"
+                        android:maxLength="4"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/aahar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/sellername_layout">
+
+
+                <!--  Password Label -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="5dp"
+                    android:theme="@style/TextLabel">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/Ed_aadhar"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="@color/secondary_text"
+                        android:textStyle="bold"
+                        android:padding="5dp"
+                        android:inputType="number"
+                        android:hint="SELLER AADHAR"
+                        android:maxLength="4"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/address_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_below="@+id/aahar_layout">
+
+
+                    <EditText
+                        android:id="@+id/Ed_address"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="textPostalAddress"
+                        android:hint="ADDRESS"
+                        android:textColorHint="@color/navigationBarColor"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:gravity="top"
+                        android:padding="5dp"
+                        android:paddingLeft="5dp"
+
+                        android:paddingRight="5dp"
+                        android:background="@drawable/edittextstyle"
+                        />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/contact_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/address_layout">
+
+
+                <!--  Password Label -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="5dp"
+                    android:theme="@style/TextLabel">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/Ed_contactno"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="@color/secondary_text"
+                        android:textStyle="bold"
+                        android:padding="5dp"
+                        android:inputType="number"
+                        android:hint="Contact No."
+                        android:maxLength="10"
+                       />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/place_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/contact_layout">
+
+
+                <!--  Password Label -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="5dp"
+                    android:theme="@style/TextLabel">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/Ed_place"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="@color/secondary_text"
+                        android:textStyle="bold"
+                        android:padding="5dp"
+                        android:inputType="textCapCharacters"
+                        android:hint="Place Of Purchase"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/persons_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/place_layout">
+
+
+                <!--  Password Label -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="5dp"
+                    android:theme="@style/TextLabel">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/Ed_noofpersons"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="@color/secondary_text"
+                        android:textStyle="bold"
+                        android:padding="5dp"
+                        android:inputType="number"
+                        android:hint="No Of Persons Involved"
+                        android:maxLength="10"
+
+                       />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/button_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/secondhalf"
+                android:gravity="center"
+
+
+                >
+
+
+                <android.support.v7.widget.AppCompatButton
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/Btn_rcdetails"
+                    android:text="GET DETAILS"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textColor="@color/textColorPrimary"
+                    android:background="@drawable/buttonbackground"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"
+
+                    />
+
+
+            </RelativeLayout>
+
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/Tv_user"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearlayout2"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Vehicle Purchases"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:paddingLeft="10dp"
+        android:background="@color/primary"
+        android:gravity="left|center"
+        />
+    <TextView
+        android:id="@+id/footer"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:layout_alignParentBottom="true"
+        android:text="Powered By : MOTHER TECHNOLOGIES PROJECT VENTURES"
+        android:textColor="#ffffff"
+        android:background="@color/navigationBarColor"
+        android:textStyle="bold|italic"
+        android:gravity="center" />
+
+</RelativeLayout>

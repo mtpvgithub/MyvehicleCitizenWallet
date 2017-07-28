@@ -7,9 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-/**
- * Created by MANOHAR on 6/29/2017.
- */
+
 
 public class VehicleDashboard extends AppCompatActivity {
 
@@ -17,7 +15,6 @@ public class VehicleDashboard extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_vehicledashboard);
 
         Btn_listmyvehicles=(Button)findViewById(R.id.Btn_listmyvehicles);
@@ -39,7 +36,6 @@ public class VehicleDashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(VehicleDashboard.this,MyVehicle_Purchases.class);
-
                 startActivity(i);
             }
         });
@@ -71,7 +67,6 @@ public class VehicleDashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(VehicleDashboard.this,ChangeofAddress_Activity.class);
-
                 startActivity(i);
             }
         });
@@ -82,7 +77,6 @@ public class VehicleDashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(VehicleDashboard.this,Pendindchallans_withTab.class);
-
                 startActivity(i);
             }
         });
@@ -93,8 +87,7 @@ public class VehicleDashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i=new Intent(VehicleDashboard.this,ReportComplaint.class);
-
+                Intent i=new Intent(VehicleDashboard.this, ReportComplaint.class);
                 startActivity(i);
             }
         });

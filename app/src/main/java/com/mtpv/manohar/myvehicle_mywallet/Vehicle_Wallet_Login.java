@@ -53,20 +53,19 @@ public class Vehicle_Wallet_Login extends AppCompatActivity {
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.INSTALL_SHORTCUT
-          /* ETC.. */
     };
     private static final int REQUEST_PERMISSIONS = 20;
     private SparseIntArray mErrorString;
-    EditText edit_id,edit_pwd;
-    String Username=null;
-    String Password=null;
-    public static String alert_string = null ;
+    EditText edit_id, edit_pwd;
+    String Username = null;
+    String Password = null;
+    public static String alert_string = null;
 
     boolean doubleBackToExitPressedOnce = false;
 
-    public static String Mobilenum=null;
-    public static String username=null;
-    public static String usertype=null;
+    public static String Mobilenum = null;
+    public static String username = null;
+    public static String usertype = null;
 
     LinearLayout layout_do_not_have_an_account;
     private FirebaseAnalytics mFirebaseAnalytics;
@@ -76,44 +75,33 @@ public class Vehicle_Wallet_Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if(BuildConfig.DEBUG)
-       {
+        if (BuildConfig.DEBUG) {
             Fabric.with(this, new Crashlytics());
 
         }
-
-        // Obtain the FirebaseAnalytics instance.
-      //  mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_vehiclelogin);
 
 
-        layout_do_not_have_an_account = (LinearLayout)findViewById(R.id.layout_do_not_have_an_account);
-        RelativeLayout topPanel=(RelativeLayout)findViewById(R.id.topPanel);
-
+        layout_do_not_have_an_account = (LinearLayout) findViewById(R.id.layout_do_not_have_an_account);
+        RelativeLayout topPanel = (RelativeLayout) findViewById(R.id.topPanel);
         topPanel.getBackground().setAlpha(50);
-
         setContentView(R.layout.activity_vehiclelogin);
-
-        edit_id=(EditText)findViewById(R.id.edit_id);
-        edit_pwd=(EditText)findViewById(R.id.edit_pwd);
-        progIndicator=(AVLoadingIndicatorView)findViewById(R.id.progIndicator);
-
+        edit_id = (EditText) findViewById(R.id.edit_id);
+        edit_pwd = (EditText) findViewById(R.id.edit_pwd);
+        progIndicator = (AVLoadingIndicatorView) findViewById(R.id.progIndicator);
 
         edit_id.setText("Manohar");
         edit_pwd.setText("12345");
 
-
-
         mErrorString = new SparseIntArray();
-
 
         if (Build.VERSION.SDK_INT > 22 && !hasPermissions(requiredPermissions)) {
 
             Vehicle_Wallet_Login.this.requestAppPermissions(new
-                            String[]{ Manifest.permission.READ_PHONE_STATE,
+                            String[]{Manifest.permission.READ_PHONE_STATE,
                             Manifest.permission.ACCESS_FINE_LOCATION,
                             Manifest.permission.ACCESS_NETWORK_STATE,
                             Manifest.permission.ACCESS_WIFI_STATE,
@@ -127,52 +115,40 @@ public class Vehicle_Wallet_Login extends AppCompatActivity {
 
         }
 
-        Button button_login=(Button)findViewById(R.id.button_login);
+        Button button_login = (Button) findViewById(R.id.button_login);
 
         button_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-
-               if(edit_id.getText().toString().trim().equals("") && edit_pwd.getText().toString().trim().equals(""))
-               {
-                   showtoast("Validation","Please fill the Fields  to continue");
-                   edit_id.requestFocus();
-               }
-
-               else if (edit_id.getText().toString().trim().equals("")) {
-//                    edit_id.setError(Html.fromHtml("<font color='red'>Please Enter Id!</font>"));
-
-                    showtoast("Validation","Please fill the user id to continue");
+                if (edit_id.getText().toString().trim().equals("") && edit_pwd.getText().toString().trim().equals("")) {
+                    showtoast("Validation", "Please fill the Fields  to continue");
                     edit_id.requestFocus();
-                }
-                else  if (edit_pwd.getText().toString().trim().equals("")) {
-                  //  edit_id.setError(Html.fromHtml("<font color='red'>Please Enter Id!</font>"));
-                    showtoast("Validation","Please fill the Password to continue");
-
+                } else if (edit_id.getText().toString().trim().equals("")) {
+                    showtoast("Validation", "Please fill the user id to continue");
                     edit_id.requestFocus();
-                }
-
-                else {
+                } else if (edit_pwd.getText().toString().trim().equals("")) {
+                    showtoast("Validation", "Please fill the Password to continue");
+                    edit_id.requestFocus();
+                } else {
                     if (isOnline()) {
 
-                        Username=edit_id.getText().toString();
-                        Password=edit_pwd.getText().toString();
+                        Username = edit_id.getText().toString();
+                        Password = edit_pwd.getText().toString();
 
                         new Login().execute();
 
                         Handler handler = new Handler();
-                        handler.postDelayed(new Runnable()
-                        {
+                        handler.postDelayed(new Runnable() {
                             @Override
                             public void run() {
-                                if ( new Login().getStatus() == AsyncTask.Status.RUNNING )
+                                if (new Login().getStatus() == AsyncTask.Status.RUNNING)
                                     new Login().cancel(true);
                             }
-                        }, 30000 );
+                        }, 30000);
 
                     } else {
-                        showtoast("Validation","Please check your network connection!");
+                        showtoast("Validation", "Please check your network connection!");
                     }
                 }
 
@@ -181,17 +157,15 @@ public class Vehicle_Wallet_Login extends AppCompatActivity {
         });
 
 
-
-        TextView textView_do_not_have_an_account=(TextView)findViewById(R.id.textView_do_not_have_an_account);
+        TextView textView_do_not_have_an_account = (TextView) findViewById(R.id.textView_do_not_have_an_account);
 
         textView_do_not_have_an_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent i=new Intent(Vehicle_Wallet_Login.this, RegisterActivity.class);
+                Intent i = new Intent(Vehicle_Wallet_Login.this, RegisterActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i);
-              //  finish();
             }
         });
 
@@ -235,8 +209,7 @@ public class Vehicle_Wallet_Login extends AppCompatActivity {
             onPermissionsGranted(requestCode);
         } else {
             Snackbar.make(findViewById(android.R.id.content), mErrorString.get(requestCode),
-                    Snackbar.LENGTH_INDEFINITE).setAction("ENABLE",
-                    new View.OnClickListener() {
+                    Snackbar.LENGTH_INDEFINITE).setAction("ENABLE", new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent();
@@ -265,7 +238,7 @@ public class Vehicle_Wallet_Login extends AppCompatActivity {
 
 
     public class Login extends AsyncTask<String, Void, String> {
-      //ProgressDialog dialog;
+        //ProgressDialog dialog;
 
         protected void onPreExecute() {
 //            dialog = new ProgressDialog(Vehicle_Wallet_Login.this);
@@ -281,20 +254,18 @@ public class Vehicle_Wallet_Login extends AppCompatActivity {
         @Override
         protected String doInBackground(String... params) {
 
-
             String response = ServiceHelper.login(Username, Password);
-
-
             return response;
 
         }
+
         @Override
         protected void onPostExecute(String result) {
-          //  dialog.dismiss();
+            //  dialog.dismiss();
 
             stopAnim();
 
-            if(!result.equalsIgnoreCase("NA")) {
+            if (!result.equalsIgnoreCase("NA")) {
 
 
                 try {
@@ -307,7 +278,7 @@ public class Vehicle_Wallet_Login extends AppCompatActivity {
                         //witness_id_code
                         username = c.getString("User Name");
                         usertype = c.getString("User Type");
-                        Mobilenum=c.getString("MobileNo");
+                        Mobilenum = c.getString("MobileNo");
 
                     }
 
@@ -318,23 +289,20 @@ public class Vehicle_Wallet_Login extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-            }
-            else
-            {
-                showtoast("Service Validation","Please check your credentials and try again!");
-            }
+            } else {
+                showtoast("Service Validation", "Please check your credentials and try again!");
             }
         }
+    }
 
-    void showtoast(String title , String Message)
-    {
-        LayoutInflater inflator=getLayoutInflater();
-        View toastlayout=inflator.inflate(R.layout.my_toast,(ViewGroup)findViewById(R.id.toast_root_view));
-        TextView toast_header=(TextView)toastlayout.findViewById(R.id.toast_header);
+    void showtoast(String title, String Message) {
+        LayoutInflater inflator = getLayoutInflater();
+        View toastlayout = inflator.inflate(R.layout.my_toast, (ViewGroup) findViewById(R.id.toast_root_view));
+        TextView toast_header = (TextView) toastlayout.findViewById(R.id.toast_header);
         toast_header.setText(title);
-        TextView toast_body=(TextView)toastlayout.findViewById(R.id.toast_body);
+        TextView toast_body = (TextView) toastlayout.findViewById(R.id.toast_body);
         toast_body.setText(Message);
-        Toast toast=new Toast(getApplicationContext());
+        Toast toast = new Toast(getApplicationContext());
         toast.setGravity(Gravity.CENTER, 0, 0);
         toast.setDuration(toast.LENGTH_LONG);
         toast.setView(toastlayout);
@@ -343,23 +311,10 @@ public class Vehicle_Wallet_Login extends AppCompatActivity {
 
 
 
-//    public void showMessage(String title, String message) {
-//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//        builder.setCancelable(true);
-//        builder.setTitle(title);
-//        builder.setMessage(message);
-//        builder.setNeutralButton("OK", new DialogInterface.OnClickListener() {
-//            public void onClick(DialogInterface dialog, int which) {
-//
-//
-//            }
-//        });
-//        builder.show();
-//    }
 
 
     public Boolean isOnline() {
-        ConnectivityManager conManager = (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager conManager = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo nwInfo = conManager.getActiveNetworkInfo();
         return nwInfo != null;
     }
@@ -370,16 +325,15 @@ public class Vehicle_Wallet_Login extends AppCompatActivity {
             super.onBackPressed();
             return;
         }
-        alert_string = "loginback" ;
+        alert_string = "loginback";
 
         this.doubleBackToExitPressedOnce = true;
-        showtoast("Validation","Please click BACK again to exit");
+        showtoast("Validation", "Please click BACK again to exit");
 
         new Handler().postDelayed(new Runnable() {
-
             @Override
             public void run() {
-                doubleBackToExitPressedOnce=false;
+                doubleBackToExitPressedOnce = false;
             }
         }, 2000);
     }
@@ -388,6 +342,7 @@ public class Vehicle_Wallet_Login extends AppCompatActivity {
 // progIndicator.show();
         progIndicator.smoothToShow();
     }
+
     public void stopAnim() {
 //progIndicator.hide();
         progIndicator.smoothToHide();
